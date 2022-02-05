@@ -10,11 +10,13 @@ services:
       - internal
     volumes:
       - ./project/:/var/www/html
-    user: "1000:1000"
   php:
     build:
       context: ./.docker
       dockerfile: php/Dockerfile
+      args:
+        USER_ID: ${UID:-0}
+        GROUP_ID: ${GID:-0}
     environment:
       XDEBUG_MODE: debug
       XDEBUG_CONFIG: client_host=localhost client_port=9003 discover_client_host=true
@@ -22,12 +24,12 @@ services:
       - internal
     volumes:
       - ./project/:/var/www/html
-    user: "1000:1000"
+    user: ${UID}:${GID}
   composer:
     image: composer
-    user: "1000:1000"
     volumes:
-      - ./:/app
+      - ./project:/app
+    user: ${UID}:${GID}
 
 networks:
   internal:

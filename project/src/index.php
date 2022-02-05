@@ -1,5 +1,2 @@
 <?php
-phpinfo();
-echo "test 1";
-echo "test 2";
-echo "test 3";
+require __DIR__.'/../../vendor/autoload.php';
