@@ -31,4 +31,4 @@ docker-compose exec php php ./vendor/bin/phpunit
 docker-compose exec php php ./vendor/bin/phpunit path/to/FileTest.php
 ```
 
-- Execute a fully functional Nginx web server that will at `http://localhost:8080'
+- Execute a fully functional Nginx web server that will at `http://localhost:8080`
