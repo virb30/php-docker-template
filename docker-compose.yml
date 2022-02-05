@@ -9,7 +9,8 @@ services:
     networks:
       - internal
     volumes:
-      - ./project/:/var/www/html
+      - ./project:/var/www/html
+    user: ${UID}:${GID}
   php:
     build:
       context: ./.docker
@@ -17,9 +18,10 @@ services:
       args:
         USER_ID: ${UID:-0}
         GROUP_ID: ${GID:-0}
+    tty: true
     environment:
       XDEBUG_MODE: debug
-      XDEBUG_CONFIG: client_host=localhost client_port=9003 discover_client_host=true
+      XDEBUG_CONFIG: client_host=localhost client_port=9003 discover_client_host=true start_on_request=yes
     networks:
       - internal
     volumes:

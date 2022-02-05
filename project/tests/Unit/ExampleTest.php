@@ -3,7 +3,7 @@
 use App\Example;
 use PHPUnit\Framework\TestCase;
 
-class FirstTest extends TestCase
+class ExampleTest extends TestCase
 {
   /**
    * @covers Example::execute
