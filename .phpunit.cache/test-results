@@ -1,1 +1,0 @@
-{"version":1,"defects":{"FirstTest::testSimple":5,"FirstTest::testExampleClassShouldReturnTrue":4},"times":{"FirstTest::testSimple":0.003,"FirstTest::testExampleClassShouldReturnTrue":0.002,"ExampleTest::testExampleClassShouldReturnTrue":0.002}}
