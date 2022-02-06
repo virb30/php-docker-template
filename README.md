@@ -16,7 +16,8 @@ You can set a DB_DRIVER to be installed at PHP image build, accepted values are:
 - mysql: to use with MariaDB
 - pgsql: to use with Postgres
 
-It's also possible to set the INSTALL_REDIS argument to true to install Redis driver to PHP image at build.
+It's also possible to set the INSTALL_REDIS argument to true, 
+this will install the Redis driver to PHP image at build.
 
 ```yml
 ...
@@ -39,6 +40,8 @@ With this template it is possible to:
 ```console
 docker-compose -f "docker-compose.yml" up -d --build
 ```
+The application will be available at http://localhost:8080
+
   
 - Install PHP dependencies with composer
 ```console
@@ -53,5 +56,3 @@ docker-compose exec php php ./vendor/bin/phpunit
 #To specify a test file
 docker-compose exec php php ./vendor/bin/phpunit path/to/FileTest.php
 ```
-
-- Execute a PHP application served by a Nginx Web server that will be available at http://localhost:8080
