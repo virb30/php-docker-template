@@ -18,6 +18,8 @@ services:
       args:
         USER_ID: ${UID:-0}
         GROUP_ID: ${GID:-0}
+        INSTALL_REDIS: "false"
+        DB_DRIVER: "none"
     tty: true
     environment:
       XDEBUG_MODE: debug
