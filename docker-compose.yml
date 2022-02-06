@@ -9,7 +9,7 @@ services:
     networks:
       - internal
     volumes:
-      - ./project:/var/www/html
+      - .:/var/www/html
     user: ${UID}:${GID}
   php:
     build:
@@ -27,12 +27,12 @@ services:
     networks:
       - internal
     volumes:
-      - ./project/:/var/www/html
+      - .:/var/www/html
     user: ${UID}:${GID}
   composer:
     image: composer
     volumes:
-      - ./project:/app
+      - .:/app
     user: ${UID}:${GID}
     depends_on:
       - php
