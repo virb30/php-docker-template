@@ -34,6 +34,9 @@ services:
     volumes:
       - ./project:/app
     user: ${UID}:${GID}
+    depends_on:
+      - php
+    command: composer install
 
 networks:
   internal:
