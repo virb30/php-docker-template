@@ -9,6 +9,26 @@ Configures Docker containers for:
 - Nginx
 - Composer
 
+### Directory structure
+
+The default directory structure to be used as a starting point.
+
+#### Directories
+
+- `.docker`: contains Dockerfiles and files that are required for docker to run
+- `.vscode`: contains configuration files of VS Code (debug)
+- `public`: public path of project - You should put all public files in this folder eg. index.php, favicon.ico
+- `src`: source code of application - All the code should be put in this directory
+- `tests`: tests files of application - PHPUnit will listen to this folder by default
+
+#### Files
+- `composer.json`
+- `composer.lock`
+- `docker-compose.yml`
+- `Makefile`: contains some common commands to be used as helper
+- `phpunit.xml`: configures PHPUnit
+
+
 ## Available Configuration
 
 You can set a DB_DRIVER to be installed at PHP image build, accepted values are:
