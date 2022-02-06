@@ -11,7 +11,8 @@ Configures Docker containers for:
 
 ### Directory structure
 
-The default directory structure to be used as a starting point.
+Below we decribe the default directory structure to be used as a starting point.
+Feel free to change it as your needs.
 
 #### Directories
 
