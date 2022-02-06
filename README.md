@@ -46,13 +46,19 @@ The application will be available at http://localhost:8080
 - Install PHP dependencies with composer
 ```console
 docker-compose run composer composer <composer command>
-#Alternativelly you can use the Makefile helper
+# alternativelly you can use the Makefile helper
 make composer "<composer command>"
 ```
 
 - Run PhpUnit tests
 ```console
 docker-compose exec php php ./vendor/bin/phpunit
-#To specify a test file
+# to specify a test file
 docker-compose exec php php ./vendor/bin/phpunit path/to/FileTest.php
+
+# alternativelly you can use the Makefile command
+
+make test
+# or
+make test /path/to/FileTest.php
 ```
