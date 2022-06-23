@@ -16,6 +16,7 @@ services:
       context: ./.docker
       dockerfile: php/Dockerfile
       args:
+        PHP_VERSION: fpm
         USER_ID: ${UID:-0}
         GROUP_ID: ${GID:-0}
         INSTALL_REDIS: "false"
