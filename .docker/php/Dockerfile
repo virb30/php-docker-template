@@ -1,7 +1,8 @@
-FROM php:fpm
-
 ARG USER_ID
 ARG GROUP_ID
+ARG PHP_VERSION='fpm'
+
+FROM php:$PHP_VERSION
 
 # install & enable xdebug
 RUN pecl install xdebug
