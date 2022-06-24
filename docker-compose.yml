@@ -10,6 +10,7 @@ services:
       - internal
     volumes:
       - .:/var/www/html
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d
     user: ${UID}:${GID}
   php:
     build:
