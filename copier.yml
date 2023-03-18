@@ -65,7 +65,7 @@ _tasks:
   - "git config user.name '{{author_name}}'"
   - "git config user.email '{{author_email}}'"
   - "git branch -M main"
-  - "docker-compose run composer composer install"
+  - "docker-compose up -d"
   - "docker-compose run php php ./vendor/bin/grumphp git:init"
   - "touch README.md"
   - "echo '# {{project_name}}\n\n{{project_description}}' >> README.md"
