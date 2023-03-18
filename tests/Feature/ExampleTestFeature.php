@@ -3,10 +3,15 @@
 use App\Example;
 use PHPUnit\Framework\TestCase;
 
-class ExampleTest extends TestCase
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
+class ExampleTestFeature extends TestCase
 {
     /**
-     * @covers Example::execute
+     * @covers \Example::execute
      */
     public function testExampleClassShouldReturnTrue()
     {

@@ -1,11 +1,11 @@
 # questions
 author_name:
   type: str
-  help: "What's yout name?"
+  help: "What's yout name? (will be used to configure git)"
 
 author_email:
   type: str
-  help: "Email address"
+  help: "Email address (will be used to configure git)"
   placeholder: "first.last@email.com"
 
 project_name:
@@ -29,6 +29,7 @@ default_namespace:
 php_version:
   type: str
   choices:
+    - latest
     - 7.4
     - 8
     - 8.1
@@ -47,3 +48,26 @@ include_redis:
   default: no
 
 _answers_file: .my-custom-answers.yml
+
+_exclude:
+  - "copier.yaml"
+  - "copier.yml"
+  - "~*"
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
+  - "README.md"
+
+_tasks:
+  - "git init"
+  - "git config user.name '{{author_name}}'"
+  - "git config user.email '{{author_email}}'"
+  - "git branch -M main"
+  - "touch README.md"
+  - "echo '# {{project_name}}\n\n{{project_description}}' >> README.md"
+  - "docker-compose run composer composer install"
+  - "docker-compose run php php ./vendor/bin/grumphp git:init"
+  - "git add ."
+  - "git commit -m 'Initial commit'"
