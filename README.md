@@ -30,7 +30,7 @@ Configures Docker containers and tools as your needs for:
 Follow the instructions below to start a new project:
 
 ```console
-copier https://github.com:virb30/php-docker-template.git path/to/your/project
+copier https://github.com/virb30/php-docker-template.git path/to/your/project
 ```
 
 ## Directory & files structure
