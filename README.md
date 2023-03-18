@@ -14,7 +14,8 @@ Configures Docker containers and tools as your needs for:
     - redis
 - Nginx
 - Composer
-## Pre-requisits
+
+## Prerequisites
 
 - [Python](https://www.python.org/downloads/) 3.8+
 - [copier](https://copier.readthedocs.io/en/stable/#installation)
