@@ -1,0 +1,49 @@
+# questions
+author_name:
+  type: str
+  help: "What's yout name?"
+
+author_email:
+  type: str
+  help: "Email address"
+  placeholder: "first.last@email.com"
+
+project_name:
+  type: str
+  help: "The name of the project"
+
+project_description:
+  type: str
+  help: "Description of the project"
+
+vendor_name:
+  type: str
+  help: "Vendor name"
+  default: "{{project_name|lower|replace('_', '-')|replace(' ', '-')}}"
+
+default_namespace:
+  type: str
+  help: "The default namespace of project"
+  default: App
+
+php_version:
+  type: str
+  choices:
+    - 7.4
+    - 8
+    - 8.1
+
+database:
+  type: str
+  help: "Include database driver?"
+  choices:
+    - none
+    - mysql
+    - postgres
+
+include_redis:
+  type: bool
+  help: "Install redis on container?"
+  default: no
+
+_answers_file: .my-custom-answers.yml
