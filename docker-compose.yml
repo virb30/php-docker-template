@@ -2,8 +2,8 @@ version: "3"
 services:
   nginx:
     build:
-      context: ./.docker
-      dockerfile: nginx/Dockerfile
+      context: ./.docker/nginx
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
     networks:
@@ -12,8 +12,8 @@ services:
       - ./.docker/nginx/conf.d/:/etc/nginx/conf.d
   php:
     build:
-      context: ./.docker
-      dockerfile: php/Dockerfile
+      context: ./.docker/php
+      dockerfile: Dockerfile
       args:
         USER_ID: ${UID:-0}
         GROUP_ID: ${GID:-0}

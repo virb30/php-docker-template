@@ -1,9 +1,9 @@
 ARG USER_ID
 ARG GROUP_ID
 
-WORKDIR /var/www/html
-
 FROM php:{% if php_version != 'latest' %}{{php_version}}-fpm{% else %}fpm{%endif%}
+
+WORKDIR /var/www/html
 
 # install & enable xdebug
 RUN pecl install xdebug
