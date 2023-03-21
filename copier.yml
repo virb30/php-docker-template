@@ -69,4 +69,4 @@ _tasks:
   - "docker-compose run composer composer install"
   - "docker-compose run php php ./vendor/bin/grumphp git:init"
   - "git add ."
-  - "git commit -m 'Initial commit'"
+  - "git commit -m \"Initial commit\""
